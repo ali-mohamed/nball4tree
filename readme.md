@@ -63,8 +63,8 @@ $ python nball.py --neighbors "TrAbls_n1AR" --ball data/nball.txt  --num 10
 ```
 
 * Results of nearest neighbors look like below:
-
  <a href="url"><img src="https://github.com/ali-mohamed/nball4tree/blob/master/pic/nbneighbors.png"></a></p>
+The first shows the nball embedding nearest neighbors while the other shows the word embedding nearest neighbors.
 
 # References
 
