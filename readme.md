@@ -49,7 +49,7 @@ If zero-energy is achieved, a big nball-embedding file will be created ```<outpu
 otherwise, failed relations and word-senses will be printed.
 
 ** Test result at Ubuntu platform:
-![img|630x420](https://github.com/gnodisnait/nball4tree/blob/master/pic/success_result.png)
+![img|630x420](https://github.com/ali-mohamed/nball4tree/blob/master/pic/success_result.png)
  
 - [nball embeddings with 6103 balls](https://drive.google.com/open?id=1cgRKKxa0apPE3RLkUiPY46l64VDc92k9)
 
@@ -64,7 +64,7 @@ $ python nball.py --neighbors "TrAbls_n1AR" --ball data/nball.txt  --num 10
 
 * Results of nearest neighbors look like below:
 
- <a href="url"><img src="https://github.com/gnodisnait/nball4tree/blob/master/pic/nbneighbors.png"   height="700" width="500" ></a></p>
+ <a href="url"><img src="https://github.com/ali-mohamed/nball4tree/blob/master/pic/nbneighbors.png"></a></p>
 
 # References
 
