@@ -22,11 +22,8 @@ def get_word2vector(wordsense, word2vecDic = dict()):
     :param word2vecDic:
     :return:
     """
-    wd = wordsense.split('.')[0]
-    if wd in word2vecDic:
-        return word2vecDic[wd]
-    elif wordsense.split('.')[0] in word2vecDic:
-        return word2vecDic[wordsense.split('.')[0]]
+    if wordsense in word2vecDic:
+        return word2vecDic[wordsense]
 
 
 def initialize_ball(root, addDim=[], L0=0.1, R0=0.1,
@@ -415,7 +412,7 @@ def training_all_families(root="*root*", wsChildrenDic=dict(), word2vecDic=dict(
     """
     global L0, DIM
     children = get_children(root, wsChildrenDic=wsChildrenDic)
-    child0= 'entity.n.01'
+    child0= children[0]
     children = sorted(children, key=lambda ele: np.dot(get_word2vector(child0, word2vecDic=word2vecDic),
                                                        get_word2vector(ele, word2vecDic=word2vecDic)))
     print(children)
@@ -561,9 +558,8 @@ def train_word2ball(root="",  outputPath = '', logFile='', wsChildrenDic=dict(),
         copy_tree(outputPath, outputPathBack)
     maxsize, mindim , word2ballDic = load_balls(ipath=outputPath, word2ballDic=word2ballDic)
     fix_dim(maxsize, mindim, bPath=outputPath, outputPath=outputPath)
-    make_DC_for_first_level_children(root=root, firstChild = 'entity.n.01', wsChildrenDic=wsChildrenDic,
+    make_DC_for_first_level_children(root=root, firstChild = 'kurosiy_n1AR', wsChildrenDic=wsChildrenDic,
                                                     word2ballDic=word2ballDic, outputPath=outputPath,
                                                     maxsize=maxsize, mindim=mindim, logFile=logFile)
 
     testing_whole_family(outputPath=outputPath, wsChildrenDic=wsChildrenDic, outputBallFile=outputBallFile)
-
